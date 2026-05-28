@@ -13,9 +13,6 @@ def train_model(
     training_args = TrainingArguments(
         output_dir=output_dir,
 
-        evaluation_strategy="epoch",
-        save_strategy="epoch",
-
         learning_rate=2e-5,
 
         per_device_train_batch_size=16,
@@ -24,8 +21,6 @@ def train_model(
         num_train_epochs=4,
 
         weight_decay=0.01,
-
-        load_best_model_at_end=True,
 
         logging_dir=f"{output_dir}/logs",
     )
