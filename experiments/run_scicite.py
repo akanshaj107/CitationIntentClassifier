@@ -61,5 +61,6 @@ trainer = train_model(
 evaluate_model(
     trainer,
     tokenized_dataset["test"],
-    LABELS
+    LABELS,
+    output_dir="outputs/scicite"
 )

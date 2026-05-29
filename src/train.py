@@ -1,7 +1,8 @@
 from transformers import Trainer
 from transformers import TrainingArguments
-
+import os
 from src.metrics import compute_metrics
+from src.preprocess import tokenizer
 
 
 def train_model(
@@ -21,6 +22,7 @@ def train_model(
         num_train_epochs=4,
 
         weight_decay=0.01,
+        save_strategy = "no",
 
         logging_dir=f"{output_dir}/logs",
     )
@@ -36,5 +38,11 @@ def train_model(
     )
 
     trainer.train()
+    model_dir = f"{output_dir}/model"
+
+    os.makedirs(model_dir, exist_ok=True)
+
+    trainer.save_model(model_dir)
+    tokenizer.save_pretrained(model_dir)
 
     return trainer
