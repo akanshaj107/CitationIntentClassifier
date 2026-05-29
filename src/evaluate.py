@@ -1,6 +1,15 @@
 import os
 import json
 import numpy as np
+import pandas as pd
+from configs.scicite_config import (
+    DATASET_NAME,
+    MODEL_NAME,
+    EPOCHS,
+    LEARNING_RATE,
+    BATCH_SIZE,
+    MAX_LENGTH
+)
 
 from sklearn.metrics import (
     classification_report,
@@ -29,6 +38,32 @@ def evaluate_model(
     )
 
     labels = predictions.label_ids
+    id2label = {
+    idx: label
+    for idx, label in enumerate(label_names)
+  }
+    predictions_dir = f"{output_dir}/predictions"
+
+    os.makedirs(
+        predictions_dir,
+        exist_ok=True
+    )
+    prediction_df = pd.DataFrame({
+      "text": test_dataset["string"],
+      "true_label": [
+        id2label[label]
+        for label in labels
+      ],
+    "predicted_label": [
+        id2label[pred]
+        for pred in preds
+      ]
+  })
+
+    prediction_df.to_csv(
+      f"{predictions_dir}/test_predictions.csv",
+      index=False
+  )
 
     # -------------------------
     # METRICS
@@ -82,14 +117,17 @@ def evaluate_model(
     # -------------------------
 
     metrics = {
-      "dataset": "SciCite",
-      "model": "allenai/scibert_scivocab_uncased",
-      "epochs": 4,
-      "learning_rate": 2e-5,
-      "batch_size": 16,
-        "accuracy": float(accuracy),
-        "macro_f1": float(macro_f1)
-    }
+    "dataset": DATASET_NAME,
+    "model": MODEL_NAME,
+
+    "epochs": EPOCHS,
+    "learning_rate": LEARNING_RATE,
+    "batch_size": BATCH_SIZE,
+    "max_length": MAX_LENGTH,
+
+    "accuracy": float(accuracy),
+    "macro_f1": float(macro_f1)
+  }
 
     with open(
         f"{metrics_dir}/metrics.json",

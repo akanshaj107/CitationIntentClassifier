@@ -1,6 +1,6 @@
 from transformers import AutoModelForSequenceClassification
 
-MODEL_NAME = "allenai/scibert_scivocab_uncased"
+from configs.scicite_config import MODEL_NAME
 
 
 def build_model(num_labels):

@@ -3,7 +3,14 @@ from transformers import TrainingArguments
 import os
 from src.metrics import compute_metrics
 from src.preprocess import tokenizer
-
+from configs.scicite_config import (
+    EPOCHS,
+    LEARNING_RATE,
+    BATCH_SIZE,
+    WEIGHT_DECAY,
+    OUTPUT_DIR,
+    SEED
+)
 
 def train_model(
     model,
@@ -13,17 +20,13 @@ def train_model(
 
     training_args = TrainingArguments(
         output_dir=output_dir,
-
-        learning_rate=2e-5,
-
-        per_device_train_batch_size=16,
-        per_device_eval_batch_size=16,
-
-        num_train_epochs=4,
-
-        weight_decay=0.01,
+        learning_rate=LEARNING_RATE,
+        per_device_train_batch_size=BATCH_SIZE,
+        per_device_eval_batch_size=BATCH_SIZE,
+        num_train_epochs=EPOCHS,
+        weight_decay=WEIGHT_DECAY,
         save_strategy = "no",
-
+        seed=SEED,
         logging_dir=f"{output_dir}/logs",
     )
 

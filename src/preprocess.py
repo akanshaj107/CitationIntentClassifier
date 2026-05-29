@@ -1,6 +1,9 @@
 from transformers import AutoTokenizer
 
-MODEL_NAME = "allenai/scibert_scivocab_uncased"
+from configs.scicite_config import (
+    MODEL_NAME,
+    MAX_LENGTH
+)
 
 tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
 
@@ -26,7 +29,7 @@ def preprocess_function(example):
         example["string"],
         truncation=True,
         padding="max_length",
-        max_length=256
+        max_length=MAX_LENGTH
     )
 
     # Convert string label -> integer
