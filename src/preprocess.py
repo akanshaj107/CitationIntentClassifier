@@ -1,6 +1,6 @@
 from transformers import AutoTokenizer
 
-from configs.scicite_config import (
+from configs.current_config import (
     MODEL_NAME,
     MAX_LENGTH
 )

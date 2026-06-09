@@ -3,7 +3,7 @@ from transformers import TrainingArguments
 import os
 from src.metrics import compute_metrics
 from src.preprocess import tokenizer
-from configs.scicite_config import (
+from configs.current_config import (
     EPOCHS,
     LEARNING_RATE,
     BATCH_SIZE,

@@ -3,7 +3,7 @@ from src.preprocess import tokenize_dataset
 from src.model import build_model
 from src.train import train_model
 from src.evaluate import evaluate_model
-from configs.scicite_config import (
+from configs.current_config import (
     LABELS,
     DATA_DIR,
     OUTPUT_DIR

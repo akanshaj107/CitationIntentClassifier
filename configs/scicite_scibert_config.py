@@ -21,7 +21,10 @@ MAX_LENGTH = 256
 WEIGHT_DECAY = 0.01
 
 # Output
-OUTPUT_DIR = "outputs/scicite"
+OUTPUT_DIR = "outputs/scicite_scibert"
 
 # Reproducibility
 SEED = 42
+
+#Experiment
+EXPERIMENT_NAME = "scicite_scibert"

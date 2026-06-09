@@ -2,7 +2,7 @@ import os
 import json
 import numpy as np
 import pandas as pd
-from configs.scicite_config import (
+from configs.current_config import (
     DATASET_NAME,
     MODEL_NAME,
     EPOCHS,

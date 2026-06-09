@@ -1,6 +1,6 @@
 from transformers import AutoModelForSequenceClassification
 
-from configs.scicite_config import MODEL_NAME
+from configs.current_config import MODEL_NAME
 
 
 def build_model(num_labels):
