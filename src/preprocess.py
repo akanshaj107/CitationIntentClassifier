@@ -1,5 +1,5 @@
 from transformers import AutoTokenizer
-
+from datasets import Value
 from configs.current_config import (
     MODEL_NAME,
     MAX_LENGTH
@@ -7,23 +7,11 @@ from configs.current_config import (
 
 tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
 
-
-# -------------------------
-# LABEL ENCODING
-# -------------------------
-
-label2id = {
-    "background": 0,
-    "method": 1,
-    "result": 2
-}
-
-
 # -------------------------
 # PREPROCESS FUNCTION
 # -------------------------
 
-def preprocess_function(example):
+def preprocess_function(example, label2id):
 
     encoding = tokenizer(
         example["string"],
@@ -33,7 +21,7 @@ def preprocess_function(example):
     )
 
     # Convert string label -> integer
-    encoding["label"] = label2id[example["label"]]
+    encoding["label"] = label2id[example["label"].lower()]
 
     return encoding
 
@@ -42,10 +30,22 @@ def preprocess_function(example):
 # TOKENIZE DATASET
 # -------------------------
 
-def tokenize_dataset(dataset):
+def tokenize_dataset(dataset, labels):
+
+    label2id = {
+        label: idx
+        for idx, label in enumerate(labels)
+    }
 
     tokenized_dataset = dataset.map(
-        preprocess_function
+        lambda example: preprocess_function(
+            example,
+            label2id
+        )
     )
-
+    tokenized_dataset = tokenized_dataset.cast_column(
+        "label",
+        Value("int64")
+    )
+    
     return tokenized_dataset

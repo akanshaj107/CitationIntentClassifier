@@ -33,9 +33,8 @@ dataset = load_scicite(DATA_DIR)
 # ------------------------
 
 tokenized_dataset = tokenize_dataset(
-    dataset
+    dataset, LABELS
 )
-
 
 # ------------------------
 # BUILD MODEL

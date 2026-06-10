@@ -24,6 +24,9 @@ def train_model(
         per_device_train_batch_size=BATCH_SIZE,
         per_device_eval_batch_size=BATCH_SIZE,
         num_train_epochs=EPOCHS,
+        #to be removed after testing
+        #max_steps=10,
+        #For testing purposes, we are limiting the number of training steps.
         weight_decay=WEIGHT_DECAY,
         save_strategy = "no",
         seed=SEED,

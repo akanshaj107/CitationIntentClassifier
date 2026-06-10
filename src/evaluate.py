@@ -126,7 +126,8 @@ def evaluate_model(
     "max_length": MAX_LENGTH,
 
     "accuracy": float(accuracy),
-    "macro_f1": float(macro_f1)
+    "macro_f1": float(macro_f1),
+    "labels": label_names
   }
 
     with open(
