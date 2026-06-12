@@ -36,6 +36,12 @@ tokenized_dataset = tokenize_dataset(
     dataset, LABELS
 )
 
+#----To be removed after testing----#
+#tokenized_dataset["train"] = tokenized_dataset["train"].select(range(100))
+#tokenized_dataset["validation"] = tokenized_dataset["validation"].select(range(20))
+#tokenized_dataset["test"] = tokenized_dataset["test"].select(range(20))
+# For testing purposes, we are selecting a subset of the dataset.
+
 # ------------------------
 # BUILD MODEL
 # ------------------------

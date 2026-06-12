@@ -24,11 +24,17 @@ def train_model(
         per_device_train_batch_size=BATCH_SIZE,
         per_device_eval_batch_size=BATCH_SIZE,
         num_train_epochs=EPOCHS,
+        eval_strategy="epoch",
+        save_strategy="epoch",
+        load_best_model_at_end=True,
+        metric_for_best_model="eval_macro_f1",
+        greater_is_better=True,
+        logging_strategy="epoch",
+        report_to="tensorboard",
         #to be removed after testing
         #max_steps=10,
-        #For testing purposes, we are limiting the number of training steps.
+        #For testing purposes.
         weight_decay=WEIGHT_DECAY,
-        save_strategy = "no",
         seed=SEED,
         logging_dir=f"{output_dir}/logs",
     )

@@ -29,7 +29,7 @@ LABELS = [
 # ------------------------
 
 dataset = load_acl_arc(DATA_DIR)
-print(sorted(set(dataset["train"]["label"])))
+#print(sorted(set(dataset["train"]["label"])))
 
 # ------------------------
 # TOKENIZE
