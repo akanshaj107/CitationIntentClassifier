@@ -1,19 +1,121 @@
-Citation Intent Classification using SciBERT
+# CitationIntentClassifier
 
-This project implements a modular NLP pipeline for **Citation Intent Classification**
+A unified framework for Citation Intent Classification across multiple taxonomies using BERT and SciBERT.
 
-Baseline Model
-Dataset: SciCite
-Encoder: SciBERT (allenai/scibert_scivocab_uncased)
-Task: Citation Intent Classification
-Classes:
-background
-method
-result
+## Supported Taxonomies
 
-# Running the Project on Google Colab
+### SciCite
+- Background
+- Method
+- Result
 
-To run this project on Google Colab, first open Google Colab and create a new notebook. Before running the project, enable GPU support by going to **Runtime → Change runtime type → GPU**. This ensures faster training using Colab’s free GPU resources. Next, clone the GitHub repository into the Colab environment using:
-!git clone https://github.com/akanshaj107/CitationIntentClassifier.git
-install all required dependencies using the requirements.txt file: !pip install -r requirements.txt
-Finally, run the complete citation intent classification pipeline using: !python -m experiments.run_scicite
+### ACL-ARC
+- Background
+- Uses
+- CompareOrContrast
+- Motivation
+- Extends
+- Future
+
+### SOFT
+**Citation Function**
+- Contextualize
+- SignalGap
+- HighlightLimitation
+- JustifyDesignChoice
+- Use
+- Modify
+- EvaluateAgainst
+
+**Citation Content**
+- Performed Work
+- Discovery
+- Produced Resource
+
+---
+
+## Models
+
+- BERT (`bert-base-uncased`)
+- SciBERT (`allenai/scibert_scivocab_uncased`)
+
+---
+
+## Project Structure
+
+```text
+configs/       # Experiment configurations
+data/          # Datasets
+experiments/   # Run scripts
+scripts/       # Dataset builders
+src/           # Core pipeline
+outputs/       # Metrics and predictions
+```  qa
+
+---
+
+## Running Experiments
+
+# Configuration
+
+Before running an experiment, update the corresponding configuration file in `current configs/`.
+Available configurations:
+
+- `scicite_scibert_config.py`
+- `scicite_bert_config.py`
+- `acl_arc_scibert_config.py`
+- `acl_arc_bert_config.py`
+- `soft_scibert_config.py`
+- `soft_bert_config.py`
+
+### SciCite
+
+```bash
+python -m experiments.run_scicite
+```
+
+### ACL-ARC
+
+```bash
+python -m experiments.run_acl_arc
+```
+
+### SOFT
+
+```bash
+python -m experiments.run_soft
+```
+
+---
+
+## Outputs
+
+Each experiment saves:
+
+```text
+outputs/<experiment_name>/
+
+├── metrics/
+│   ├── metrics.json
+│   ├── classification_report.txt
+│   └── confusion_matrix.csv
+│
+└── predictions/
+    └── test_predictions.csv
+```
+
+## Future Work
+
+- LLM Prompting (Zero-Shot / Few-Shot)
+- DSPy-based Prompt Optimization
+- Qwen Models
+- Triply Annotated Benchmark Evaluation
+- Cross-Taxonomy Comparison
+
+---
+
+## References
+
+- SciCite (Cohan et al., 2019)
+- ACL-ARC (Jurgens et al., 2018)
+- SOFT Citation Classification Framework
