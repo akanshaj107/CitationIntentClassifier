@@ -42,8 +42,19 @@ def load_benchmark_dataset(
         if taxonomy == "scicite":
             label = sample["scicite"]
 
-        elif taxonomy == "acl_arc":
-            label = sample["acl_arc"]
+        elif taxonomy == "aclarc":
+            label = sample["aclarc"]
+            
+            label = sample["aclarc"].lower()
+
+            label_mapping = {
+                "compares": "compareorcontrast",
+                "compare": "compareorcontrast",
+                "compare_or_contrast": "compareorcontrast",
+            }
+
+            label = label_mapping.get(label, label)
+            
 
         elif taxonomy == "soft_intent":
             label = sample["soft_intent"]

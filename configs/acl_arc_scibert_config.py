@@ -3,6 +3,11 @@
 DATASET_NAME = "ACL-ARC"
 DATA_DIR = "data/acl_arc"
 
+#Benchmark
+BENCHMARK_FILE = "data/benchmark/benchmark.json"
+
+RUN_BENCHMARK = True
+
 # Model
 MODEL_NAME = "allenai/scibert_scivocab_uncased"
 

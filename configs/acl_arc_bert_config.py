@@ -2,6 +2,11 @@ DATASET_NAME = "ACL-ARC"
 
 DATA_DIR = "data/acl_arc"
 
+#benchmark
+BENCHMARK_FILE = "data/benchmark/benchmark.json"
+
+RUN_BENCHMARK = True
+
 MODEL_NAME = "bert-base-uncased"
 
 LABELS = [

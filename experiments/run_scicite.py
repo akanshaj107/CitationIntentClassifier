@@ -40,9 +40,9 @@ tokenized_dataset = tokenize_dataset(
 )
 
 #----To be removed after testing----#
-tokenized_dataset["train"] = tokenized_dataset["train"].select(range(50))
-tokenized_dataset["validation"] = tokenized_dataset["validation"].select(range(50))
-tokenized_dataset["test"] = tokenized_dataset["test"].select(range(50))
+#tokenized_dataset["train"] = tokenized_dataset["train"].select(range(50))
+#tokenized_dataset["validation"] = tokenized_dataset["validation"].select(range(50))
+#tokenized_dataset["test"] = tokenized_dataset["test"].select(range(50))
 # For testing purposes, we are selecting a subset of the dataset.
 
 # ------------------------

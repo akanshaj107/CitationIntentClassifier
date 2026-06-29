@@ -6,10 +6,12 @@ from src.evaluate import evaluate_model
 from configs.current_config import (
     LABELS,
     DATA_DIR,
-    OUTPUT_DIR
+    OUTPUT_DIR,
+    RUN_BENCHMARK,
+    BENCHMARK_FILE
 )
 
-
+from src.benchmark_loader import load_benchmark_dataset
 # ------------------------
 # LABELS
 # ------------------------
@@ -73,5 +75,28 @@ evaluate_model(
     trainer,
     tokenized_dataset["test"],
     LABELS,
-    output_dir=OUTPUT_DIR
+    output_dir=OUTPUT_DIR,
+    dataset_name="test"
 )
+
+if RUN_BENCHMARK:
+
+    print("\nRunning Benchmark Evaluation...")
+
+    benchmark_dataset = load_benchmark_dataset(
+        BENCHMARK_FILE,
+        taxonomy="aclarc"
+    )
+
+    benchmark_dataset = tokenize_dataset(
+        benchmark_dataset,
+        LABELS
+    )
+
+    evaluate_model(
+        trainer,
+        benchmark_dataset,
+        LABELS,
+        output_dir=f"{OUTPUT_DIR}/benchmark",
+        dataset_name="benchmark"
+    )
