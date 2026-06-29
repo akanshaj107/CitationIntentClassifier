@@ -1,0 +1,60 @@
+[
+  {
+    "experiment": "acl_arc_bert",
+    "dataset": "ACL-ARC",
+    "model": "BERT",
+    "test_accuracy": 0.7077922077922078,
+    "test_macro_f1": 0.3530961631860126,
+    "train_steps": 440,
+    "best_eval_f1": 0.38694749948122026,
+    "checkpoint": "checkpoint-440"
+  },
+  {
+    "experiment": "acl_arc_scibert",
+    "dataset": "ACL-ARC",
+    "model": "SciBERT",
+    "test_accuracy": 0.8181818181818182,
+    "test_macro_f1": 0.7252854236406868,
+    "train_steps": 440,
+    "best_eval_f1": 0.6631027157829935,
+    "checkpoint": "checkpoint-440"
+  },
+  {
+    "experiment": "scicite_bert",
+    "dataset": "SciCite",
+    "model": "BERT",
+    "test_accuracy": 0.8576034390112842,
+    "test_macro_f1": 0.8439084751325785,
+    "train_steps": 2064,
+    "best_eval_f1": 0.8384567085584663,
+    "checkpoint": "checkpoint-2064"
+  },
+  {
+    "experiment": "scicite_scibert",
+    "dataset": "SciCite",
+    "model": "SciBERT",
+    "test_accuracy": 0.8527673293927995,
+    "test_macro_f1": 0.8390100065947893,
+    "train_steps": 2064,
+    "best_eval_f1": 0.8316464730459403,
+    "checkpoint": "checkpoint-2064"
+  },
+  {
+    "experiment": "soft_multitask_bert",
+    "dataset": "SOFT",
+    "model": "BERT (Multitask)",
+    "test_accuracy": 0.7724137931034483,
+    "test_macro_f1": 0.5181426601515392,
+    "xd_intent_f1": 0.27933551615143654,
+    "xd_content_f1": 0.561286582690982
+  },
+  {
+    "experiment": "soft_multitask_scibert",
+    "dataset": "SOFT",
+    "model": "SciBERT (Multitask)",
+    "test_accuracy": 0.7586206896551724,
+    "test_macro_f1": 0.5430220573077715,
+    "xd_intent_f1": 0.29863059473632514,
+    "xd_content_f1": 0.5589174383731316
+  }
+]
