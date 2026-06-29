@@ -7,3 +7,5 @@ matplotlib
 torch
 tensorboard
 pandas
+matplotlib
+seaborn

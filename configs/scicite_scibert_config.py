@@ -2,6 +2,9 @@
 # Dataset
 DATASET_NAME = "SciCite"
 DATA_DIR = "data/scicite"
+#Benchmark
+BENCHMARK_FILE = "data/benchmark/benchmark.json"
+RUN_BENCHMARK = True
 
 # Model
 MODEL_NAME = "allenai/scibert_scivocab_uncased"

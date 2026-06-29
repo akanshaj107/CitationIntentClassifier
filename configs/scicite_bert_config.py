@@ -1,7 +1,10 @@
 # Dataset
 DATASET_NAME = "SciCite"
 DATA_DIR = "data/scicite"
+#Bechmark Dataset
+BENCHMARK_FILE = "data/benchmark/benchmark.json"
 
+RUN_BENCHMARK = True
 # Model
 MODEL_NAME = "bert-base-uncased"
 

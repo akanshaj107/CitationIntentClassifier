@@ -8,12 +8,12 @@ import csv
 import matplotlib
 
 #from src import model
-matplotlib.use("Agg")          # non-interactive, must come before pyplot import
+matplotlib.use("Agg")          
 import matplotlib.pyplot as plt
 import numpy as np
 from pathlib import Path
 
-# ── Paths ──────────────────────────────────────────────────────────────────────
+
 SCRIPT_DIR  = Path(__file__).parent.resolve()
 ROOT        = SCRIPT_DIR.parent
 OUTPUTS_DIR = ROOT / "outputs"

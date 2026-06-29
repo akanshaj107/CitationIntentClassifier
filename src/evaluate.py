@@ -23,7 +23,8 @@ def evaluate_model(
     trainer,
     test_dataset,
     label_names,
-    output_dir
+    output_dir,
+    dataset_name,
 ):
 
     # -------------------------
@@ -61,7 +62,7 @@ def evaluate_model(
   })
 
     prediction_df.to_csv(
-      f"{predictions_dir}/test_predictions.csv",
+      f"{predictions_dir}/{dataset_name}_predictions.csv",
       index=False
   )
 
