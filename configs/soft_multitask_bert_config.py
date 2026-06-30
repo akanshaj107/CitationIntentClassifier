@@ -1,7 +1,10 @@
 # Dataset
 DATASET_NAME = "SOFT"
 DATA_DIR = "data/soft"
+#benchmark
+BENCHMARK_FILE = "data/benchmark/benchmark.json"
 
+RUN_BENCHMARK = True
 # Model
 MODEL_NAME = "bert-base-uncased"
 

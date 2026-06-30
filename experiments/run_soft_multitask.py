@@ -3,7 +3,7 @@ from src.soft_model import (
     build_soft_model
 )
 from configs.current_config import (
-    DATA_DIR, OUTPUT_DIR, INTENT_LABELS, CONTENT_LABELS
+    DATA_DIR, OUTPUT_DIR, INTENT_LABELS, CONTENT_LABELS, BENCHMARK_FILE, RUN_BENCHMARK
 )
 from src.soft_preprocess import tokenize_soft_dataset
 from src.soft_train import (
@@ -11,10 +11,12 @@ from src.soft_train import (
 from src.soft_evaluate import (
     evaluate_soft_model
 )
-
+from src.benchmark_loader import load_soft_benchmark_dataset
 dataset = load_soft(
     DATA_DIR
 )
+
+print(dataset["test"].features)
 
 
 tokenized_dataset = tokenize_soft_dataset(
@@ -52,7 +54,8 @@ evaluate_soft_model(
 
     CONTENT_LABELS,
 
-    OUTPUT_DIR
+    OUTPUT_DIR,
+    dataset_name="test"
 )
 
 #Load Cross-Encoder model and evaluate on test set
@@ -71,5 +74,28 @@ evaluate_soft_model(
     tokenized_cross_domain,
     INTENT_LABELS,
     CONTENT_LABELS,
-    f"{OUTPUT_DIR}/cross_domain"
+    f"{OUTPUT_DIR}/cross_domain",
+    dataset_name="cross_domain"
+
 )
+
+if RUN_BENCHMARK:
+
+    print("\nRunning Benchmark Evaluation...")
+
+    benchmark_dataset = load_soft_benchmark_dataset(
+        BENCHMARK_FILE
+    )
+
+    tokenized_benchmark = tokenize_soft_dataset(
+        benchmark_dataset
+    )
+
+    evaluate_soft_model(
+        trainer,
+        tokenized_benchmark,
+        INTENT_LABELS,
+        CONTENT_LABELS,
+        f"{OUTPUT_DIR}/benchmark",
+        dataset_name="benchmark"
+    )

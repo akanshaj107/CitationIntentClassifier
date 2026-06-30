@@ -2,6 +2,9 @@
 DATASET_NAME = "SOFT"
 
 DATA_DIR = "data/soft"
+#benchmark
+BENCHMARK_FILE = "data/benchmark/benchmark.json"
+RUN_BENCHMARK = True
 
 # Model
 MODEL_NAME = "allenai/scibert_scivocab_uncased"

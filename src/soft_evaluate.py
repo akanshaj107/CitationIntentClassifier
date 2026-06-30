@@ -23,7 +23,8 @@ def evaluate_soft_model(
     test_dataset,
     intent_labels,
     content_labels,
-    output_dir
+    output_dir,
+    dataset_name,
 ):
 
     predictions = trainer.predict(
@@ -119,7 +120,7 @@ def evaluate_soft_model(
     ]
     })
     prediction_df.to_csv(
-        f"{predictions_dir}/test_predictions.csv",
+        f"{predictions_dir}/{dataset_name}_predictions.csv",
         index=False
     )
     
