@@ -21,3 +21,4 @@ __pycache__/
 # OS files
 .DS_Store
 Thumbs.db
+data/external/econ_citations.jsonl

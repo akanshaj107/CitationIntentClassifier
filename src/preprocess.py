@@ -21,7 +21,8 @@ def preprocess_function(example, label2id):
     )
 
     # Convert string label -> integer
-    encoding["label"] = label2id[example["label"].lower()]
+    if "label" in example:
+        encoding["label"] = label2id[example["label"].lower()]
 
     return encoding
 
