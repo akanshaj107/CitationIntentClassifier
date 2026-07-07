@@ -5,7 +5,17 @@ DATA_DIR = "data/acl_arc"
 #benchmark
 BENCHMARK_FILE = "data/benchmark/benchmark.json"
 
-RUN_BENCHMARK = True
+RUN_BENCHMARK = False
+
+EXTERNAL_DATASET = None
+
+# Options: None, "benchmark", "ape", "unarxiv", "external", "unarxiv_cs"
+
+APE_FILE = "data/ape/ape_citations.jsonl"
+
+UNARXIV_FILE = "data/external/econ_citations.jsonl"
+
+UNARXIV_CS_FILE = "data/external/cs_citations.jsonl"
 
 MODEL_NAME = "bert-base-uncased"
 

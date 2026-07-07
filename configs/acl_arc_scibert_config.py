@@ -6,7 +6,17 @@ DATA_DIR = "data/acl_arc"
 #Benchmark
 BENCHMARK_FILE = "data/benchmark/benchmark.json"
 
-RUN_BENCHMARK = True
+RUN_BENCHMARK = False
+
+EXTERNAL_DATASET = "ape"
+
+# Options: None, "benchmark", "ape", "unarxiv", "external", "unarxiv_cs"
+
+APE_FILE = "data/ape/ape_citations.jsonl"
+
+UNARXIV_FILE = "data/external/econ_citations.jsonl"
+
+UNARXIV_CS_FILE = "data/external/cs_citations.jsonl"
 
 # Model
 MODEL_NAME = "allenai/scibert_scivocab_uncased"
@@ -23,7 +33,7 @@ LABELS = [
 
 
 # Training
-EPOCHS = 4
+EPOCHS = 1
 LEARNING_RATE = 2e-5
 BATCH_SIZE = 16
 MAX_LENGTH = 256

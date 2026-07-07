@@ -11,7 +11,7 @@ BENCHMARK_FILE = "data/benchmark/benchmark.json"
 RUN_BENCHMARK = False
 APE_FILE = "data/ape/ape_citations.jsonl"
 UNARXIV_FILE = "data/external/econ_citations.jsonl"
-UNARXIV_CS_FILE = "data/external/unarxiv_cs.jsonl"
+UNARXIV_CS_FILE = "data/external/cs_citations.jsonl"
 
 
 
