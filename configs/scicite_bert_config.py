@@ -2,12 +2,12 @@
 DATASET_NAME = "SciCite"
 DATA_DIR = "data/scicite"
 
-EXTERNAL_DATASET = "None"  # Options: None, "benchmark", "ape", "unarxiv", "external"
+EXTERNAL_DATASET = "external"  # Options: None, "benchmark", "ape", "unarxiv", "external"
 # Options: None, "benchmark", "ape", "unarxiv", "external", "unarxiv_cs"
 #Bechmark Dataset
 BENCHMARK_FILE = "data/benchmark/benchmark.json"
 
-RUN_BENCHMARK = True
+RUN_BENCHMARK = False
 APE_FILE = "data/ape/ape_citations.jsonl"
 UNARXIV_FILE = "data/external/econ_citations.jsonl"
 UNARXIV_CS_FILE = "data/external/cs_citations.jsonl"
