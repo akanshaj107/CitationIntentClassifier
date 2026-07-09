@@ -8,7 +8,7 @@ BENCHMARK_FILE = "data/benchmark/benchmark.json"
 
 RUN_BENCHMARK = False
 
-EXTERNAL_DATASET = "ape"
+EXTERNAL_DATASET = "external"
 
 # Options: None, "benchmark", "ape", "unarxiv", "external", "unarxiv_cs"
 
