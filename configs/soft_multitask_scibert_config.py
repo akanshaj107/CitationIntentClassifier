@@ -4,7 +4,16 @@ DATASET_NAME = "SOFT"
 DATA_DIR = "data/soft"
 #benchmark
 BENCHMARK_FILE = "data/benchmark/benchmark.json"
-RUN_BENCHMARK = True
+RUN_BENCHMARK = False
+EXTERNAL_DATASET = "external"  # Options: None, "benchmark", "ape", "unarxiv", "external"
+
+# Options: None, "benchmark", "ape", "unarxiv", "external", "unarxiv_cs"
+
+APE_FILE = "data/ape/ape_citations.jsonl"
+
+UNARXIV_FILE = "data/external/econ_citations.jsonl"
+
+UNARXIV_CS_FILE = "data/external/cs_citations.jsonl"
 
 # Model
 MODEL_NAME = "allenai/scibert_scivocab_uncased"
