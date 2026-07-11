@@ -60,15 +60,15 @@ tokenized_dataset = tokenize_soft_dataset(
     dataset)
 
 #to be removed after testing
-tokenized_dataset["train"] = (
-    tokenized_dataset["train"]
-    .select(range(100))
-)
+#tokenized_dataset["train"] = (
+#    tokenized_dataset["train"]
+#    .select(range(100))
+#)
 
-tokenized_dataset["validation"] = (
-    tokenized_dataset["validation"]
-    .select(range(20))
-)
+#tokenized_dataset["validation"] = (
+#    tokenized_dataset["validation"]
+#    .select(range(20))
+#)
 #to be removed after testing
 
 model = build_soft_model()
