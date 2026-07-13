@@ -3,7 +3,7 @@
 DATASET_NAME = "SciCite"
 DATA_DIR = "data/scicite"
 
-EXTERNAL_DATASET = "external"  # Options: None, "benchmark", "ape", "unarxiv", "external"
+EXTERNAL_DATASET = "unarxiv_cs"  # Options: None, "benchmark", "ape", "unarxiv", "external"
 # Options: None, "benchmark", "ape", "unarxiv", "external", "unarxiv_cs"
 
 #Benchmark

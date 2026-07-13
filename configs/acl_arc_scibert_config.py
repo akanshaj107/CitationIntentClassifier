@@ -8,7 +8,7 @@ BENCHMARK_FILE = "data/benchmark/benchmark.json"
 
 RUN_BENCHMARK = False
 
-EXTERNAL_DATASET = "external"
+EXTERNAL_DATASET = "unarxiv_cs"
 
 # Options: None, "benchmark", "ape", "unarxiv", "external", "unarxiv_cs"
 
@@ -33,7 +33,7 @@ LABELS = [
 
 
 # Training
-EPOCHS = 1
+EPOCHS = 4
 LEARNING_RATE = 2e-5
 BATCH_SIZE = 16
 MAX_LENGTH = 256
